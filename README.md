@@ -1,113 +1,122 @@
-# Networking Architecture with Terraform
+# AWS Networking Architecture with Terraform
 
 ![Status](https://img.shields.io/badge/status-Completed-brightgreen)
 
 ## 🚀 Project Overview
 
-This project showcases the creation of a secure and scalable network architecture on AWS using Terraform.<br>
-It highlights essential cloud networking principles such as:
+This project provisions a secure, multi-tier AWS networking architecture using **Terraform**.  
+It demonstrates core cloud engineering concepts such as network isolation, routing, internet access control, and Infrastructure as Code (IaC).
 
-- Isolating network environments for enhanced security
-- Managing secure access
-- Automating infrastructure with Infrastructure as Code (IaC)
+---
 
+## 🏗️ Architecture
+
+This project deploys:
+
+- A custom **VPC**
+- **Public and Private Subnets** across availability zones
+- **Internet Gateway (IGW)** for public subnet access
+- **Route Tables** and associations
+- **Security Groups** for controlled inbound/outbound traffic
+
+### Architecture Diagram
+(Add your diagram here under `/docs/architecture.png`)
+
+---
+
+## 🧰 Tech Stack
+
+- **AWS**
+- **Terraform**
+- **AWS CLI**
+- Region: `eu-north-1`
+
+---
+
+## 📂 Repository Structure
+
+``````md
+├── infra/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   ├── vpc.tf
+│   ├── subnets.tf
+│   ├── routes.tf
+│   └── security-groups.tf
+├── docs/
+│   └── architecture.png
+└── README.md
+``````
 ---
 
 ## ✨ Features
 
-- **Virtual Private Cloud (VPC):** Establishes a secure, isolated network environment on AWS
-- **Public and Private Subnets:** Segments network resources for improved security and organisation
-- **Internet Gateway:** Enables internet connectivity for resources in public subnets
-- **Route Tables:** Directs network traffic efficiently between subnets and gateways
-- **Security Groups:** Acts as virtual firewalls to regulate inbound and outbound traffic 
+- Custom VPC creation  
+- Public and private subnet segmentation  
+- Internet Gateway for public routing  
+- Route tables controlling network traffic  
+- Security groups acting as virtual firewalls  
+- Fully reproducible IaC deployment  
 
 ---
 
-## 👨🏽‍💻 Tech Stack
+## ⚙️ Deployment
 
-- **AWS:** Cloud platform hosting the network infrastructure
-- **Terraform:** Infrastructure as Code tool for provisioning and managing resources
-- **VPC & Subnets:** Core components for network isolation and segmentation
-- **Internet Gateway & Route Tables:** Facilitate connectivity and direct network traffic
-- **Security Groups:** Provide network security controls
+### Prerequisites
 
----
+- AWS account  
+- AWS CLI configured  
+- Terraform installed (v1.13+)  
 
-## 📦 Getting Started
-
-To get started, you should have:
-
-- Basic understanding of AWS services (VPC, subnets, security groups)  
-- Familiarity with Terraform syntax and workflow  
-- Knowledge of networking concepts (IP addresses, routing, firewalls)  
-- AWS CLI configured and access to an AWS account with the right permissions  
-
----
-
-## 🛠️ Installation Notes
-
-- All infrastructure is deployed using the **Terraform CLI & AWS CLI**  
-- Resources were tested in the `eu-north-1` region  
-- Project built and verified with **Terraform v1.13.3**  
-- AWS resources were properly cleaned up after deployment  
-
----
-
-## 📖 Usage
-
-### Running the Terraform
+### Commands
 
 ```bash
-# Initialise Terraform
+cd infra/
 terraform init
-
-# Validate the configuration
 terraform validate
-
-# Preview changes
 terraform plan
-
-# Apply changes to deploy infrastructure
 terraform apply
-
-# Destroy infrastructure when done
 terraform destroy
 ```
+## 📘 Technical Design
+
+### VPC
+- Custom CIDR for structured IP allocation.
+
+### Subnets
+- Public subnets for internet-facing resources  
+- Private subnets for internal workloads  
+
+### Routing
+- IGW for public outbound access  
+- Route tables define traffic flow  
+
+### Security
+- Security groups use least-privilege rules  
+- Controlled inbound/outbound traffic  
 
 ---
 
-## ✅ Key Takeaways
+## 🧪 Testing
+- `terraform validate`  
+- `terraform fmt`  
+- Manual validation in the AWS Console  
 
-This project results in a modular, secure AWS network architecture, fully deployed using Terraform. It is ideal for:
-- Running cloud workloads
-- Expanding into full-stack cloud environments
-- Showcasing Terraform and AWS networking skills
+---
 
-Through this project, I gained hands-on experience with:
-- Infrastructure as Code (IaC)
-- Core AWS networking components
-- Segmentation and access control strategies
-- Building scalable, repeatable infrastructure
+## 🐛 Challenges & Learnings
+- Improved understanding of VPC, routing, and subnet design  
+- Learned to structure Terraform projects cleanly  
+- Discovered VSCode-based workflows for IaC development  
 
 ---
 
 ## 🔗 Resources
-
-- [Terraform Docs](https://developer.hashicorp.com/terraform/docs)  
-- [AWS VPC Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/)
-  
----
-
-## 🐛 Issues
-
-Even though I'm new to terraform, setting it up on my Mac and connecting it to my AWS account was striaghtforward. <br>
-Building this project was quite simple and straight forward as the documentation helped guide me on how and where to start.
-
-Also, I later found out that I could have completed this project within my VSCode and I didnt have to be working from my Mac terminal<br>
-(I'm glad I know this now for next time😅).
+- Terraform Documentation  
+- AWS VPC Documentation  
 
 ---
 
 ## 📜 License
-
 Authored by © Genesis Phillips
