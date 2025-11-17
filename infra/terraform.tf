@@ -1,5 +1,4 @@
 # Defines the required Terraform and AWS provider versions
-# and sets the deployment region to eu-north-1
 
  terraform {
   required_providers {
