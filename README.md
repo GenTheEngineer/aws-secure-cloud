@@ -29,7 +29,7 @@ This project deploys:
 - **AWS**
 - **Terraform**
 - **AWS CLI**
-- Region: `eu-north-1`
+- Region: `eu-west-1`
 
 ---
 
