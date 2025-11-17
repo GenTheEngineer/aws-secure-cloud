@@ -2,7 +2,7 @@
 
 # Set my providers region and other options that applies to the provider itself
 provider "aws" {
-  region = "eu-north-1"
+  region = "eu-west-1"
 }
 
 # Use data sources to query my cloud provider (AWS) for existing resources
@@ -21,7 +21,7 @@ data "aws_ami" "ubuntu" {
 # A resource block defines components for my infrastructure
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "secure-cloud"
