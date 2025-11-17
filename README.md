@@ -20,7 +20,7 @@ This project deploys:
 - **Security Groups** for controlled inbound/outbound traffic
 
 ### Architecture Diagram
-(Diagram to be added here under `/docs/architecture.png`)
+![Network Architecture Diagram](/docs/architecture.png)
 
 ---
 
