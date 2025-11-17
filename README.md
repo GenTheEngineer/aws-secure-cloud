@@ -33,23 +33,6 @@ This project deploys:
 
 ---
 
-## 📂 Repository Structure
-
-``````md
-├── infra/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   ├── vpc.tf
-│   ├── subnets.tf
-│   ├── routes.tf
-│   └── security-groups.tf
-├── docs/
-│   └── architecture.png
-└── README.md
-``````
----
-
 ## ✨ Features
 
 - Custom VPC creation  
