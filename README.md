@@ -1,6 +1,6 @@
 # AWS Networking Architecture with Terraform
 
-![Status](https://img.shields.io/badge/status-Completed-brightgreen)
+![Status](https://img.shields.io/badge/status-In%20Development-yellow)
 
 ## 🚀 Project Overview
 
